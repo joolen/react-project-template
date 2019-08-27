@@ -10,21 +10,21 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     card: {
-        maxWidth: 200,
+        maxWidth: 300,
     },
     media: {
-        height: 150,
+        height: 300,
     },
 });
 
-type props = {
+export type CardItemprops = {
     image: string,
     title: string,
     describe: string,
     learnMoreUrl: string
 }
 
-export const CardItem = (props: props) => {
+export const CardItem = (props: CardItemprops) => {
     const classes = useStyles();
 
     return (
@@ -33,7 +33,7 @@ export const CardItem = (props: props) => {
                 <CardMedia
                     className={classes.media}
                     image={props.image}
-                    title="Contemplative Reptile"
+                    title={props.title}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -46,7 +46,7 @@ export const CardItem = (props: props) => {
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                    <a href={props.learnMoreUrl} target="_blank">Learn More</a>
+                    <a href={props.learnMoreUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
                 </Button>
             </CardActions>
         </Card>
