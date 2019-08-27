@@ -6,7 +6,7 @@ const menuContents: CardItemprops[] = [
     {
         image: "https://redux.js.org/img/redux.svg",
         title: "Redux Example",
-        describe: "A predictable state container for JavaScript apps.",
+        describe: "A predictable state container for JavaScript apps.You can see sample page clicking here.",
         learnMoreUrl: "https://redux.js.org/"
     },
     {

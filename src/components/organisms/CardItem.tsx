@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { withRouter, RouteComponentProps } from 'react-router';
 
 const useStyles = makeStyles({
     card: {
@@ -24,12 +25,17 @@ export type CardItemprops = {
     learnMoreUrl: string
 }
 
-export const CardItem = (props: CardItemprops) => {
+type ownProps = CardItemprops & RouteComponentProps;
+
+export const CardItem = withRouter((props: ownProps) => {
     const classes = useStyles();
+    function handleClick() {
+        props.history.push('/redux-sample')
+    }
 
     return (
         <Card className={classes.card}>
-            <CardActionArea>
+            <CardActionArea onClick={() => handleClick()}>
                 <CardMedia
                     className={classes.media}
                     image={props.image}
@@ -51,4 +57,4 @@ export const CardItem = (props: CardItemprops) => {
             </CardActions>
         </Card>
     );
-}
+})
