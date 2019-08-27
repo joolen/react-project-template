@@ -1,5 +1,10 @@
 This project is based on [Create React App](https://github.com/facebook/create-react-app).
 Available scripts are confirmed in this template. Please read [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) before using.
+And this template contains [storybook](https://storybook.js.org/).
+```sh
+#To confirm components, access http://localhost:6006
+npm run storybook
+```
 
 # Dependencies
 This template mainly uses these libraries and tools.If you want to confirm all libraries,please show `package.json`.
@@ -55,9 +60,10 @@ my-app
 │   └── containers  # Used for Redux connect
 │   └── routes      # Used for React-router
 │   │   └── index.tsx
-│   ├── sagas       # Used for Redux-saga
+│   ├── sagas        # Used for Redux-saga
 │   │   └── index.ts # root saga
-│   ├── tests       # Used for Jest and Storyshots(Snapshot)
+│   ├── modules      # Redux modules
+│   ├── tests        # Used for Jest and Storyshots(Snapshot)
 │   │   └── __snapshots__ # snapshot
 │   │   │   └── storyshots.test.ts.snap
 │   │   └── reducers      # test code for reducers

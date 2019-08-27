@@ -1,17 +1,11 @@
-const path = require("path");
-module.exports = ({ config }) => {
+module.exports = ({ config, mode }) => {
     config.module.rules.push({
         test: /\.(ts|tsx)$/,
-        use: [
-            {
-                loader: require.resolve("react-docgen-typescript-loader")
-            },
-            {
-                loader: require.resolve('@storybook/addon-storysource/loader'),
-                options: { parser: 'typescript' }
-            }
-        ]
+        loader: require.resolve('babel-loader'),
+        options: {
+            presets: [['react-app', { flow: false, typescript: true }]],
+        },
     });
-    config.resolve.extensions.push(".ts", ".tsx");
+    config.resolve.extensions.push('.ts', '.tsx');
     return config;
 };
