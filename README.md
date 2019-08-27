@@ -1,44 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is based on [Create React App](https://github.com/facebook/create-react-app).
+Available scripts are confirmed in this template. Please read [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) before using.
 
-## Available Scripts
+# Dependencies
+This template mainly uses these libraries and tools.If you want to confirm all libraries,please show `package.json`.
 
-In the project directory, you can run:
+1. [React](https://reactjs.org)
+2. [Typescript](https://www.typescriptlang.org)
+3. [material-ui](https://material-ui.com)
+4. [react-redux](https://redux.js.org)
+5. [typescript-fsa](https://github.com/aikoven/typescript-fsa)
+6. [redux-saga](https://redux-saga.js.org)
+7. [react-router](https://reacttraining.com/react-router)
+8. [Storybook](https://storybook.js.org)
 
-### `npm start`
+# How to use
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+# clone this repository
+git clone https://github.com/joolen/react-project-template.git my-app
+# change direcory you made
+cd my-app
+# install dependencies
+npm install
+# run project. you can access http://localhost:3000
+npm start
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# Directory structure
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── .tsconfig.json
+├── .storybook     # configurations for storybook
+│   ├── addons.js
+│   ├── config.js
+│   └── webpack.config.js
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+└── src
+│   ├── API        # Used for external communication
+│   ├── components # Structure is based on atomic design
+│   │   ├── atoms
+│   │   ├── molecules
+│   │   ├── organisms
+│   │   ├── templates
+│   │   ├── pages
+│   │   └── stories # Used for story book
+│   └── containers  # Used for Redux connect
+│   └── routes      # Used for React-router
+│   │   └── index.tsx
+│   ├── sagas       # Used for Redux-saga
+│   │   └── index.ts # root saga
+│   ├── tests       # Used for Jest and Storyshots(Snapshot)
+│   │   └── __snapshots__ # snapshot
+│   │   │   └── storyshots.test.ts.snap
+│   │   └── reducers      # test code for reducers
+│   │   │   └── sample.test.ts
+│   │   └── storyshots.test.ts # story shots
+│   ├── App.css
+│   ├── configureStore.ts # Used for Redux Store configurations
+│   ├── index.css
+│   ├── index.tsx
+│   ├── logo.svg
+│   └── serviceWorker.ts
+└─────
+```
