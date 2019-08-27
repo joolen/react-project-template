@@ -30,6 +30,7 @@ export const WelcomeTemplate = (props: props) => {
                                     title={card.title}
                                     describe={card.describe}
                                     learnMoreUrl={card.learnMoreUrl}
+                                    route={card.route}
                                 />
                             </Grid>
                         ))}

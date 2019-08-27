@@ -22,7 +22,8 @@ export type CardItemprops = {
     image: string,
     title: string,
     describe: string,
-    learnMoreUrl: string
+    learnMoreUrl: string,
+    route: string
 }
 
 type ownProps = CardItemprops & RouteComponentProps;
@@ -30,7 +31,7 @@ type ownProps = CardItemprops & RouteComponentProps;
 export const CardItem = withRouter((props: ownProps) => {
     const classes = useStyles();
     function handleClick() {
-        props.history.push('/redux-sample')
+        props.history.push(props.route)
     }
 
     return (

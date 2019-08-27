@@ -4,10 +4,14 @@ import { withInfo } from "@storybook/addon-info";
 import { withKnobs, text } from "@storybook/addon-knobs";
 import { SampleAppBar } from "../organisms/AppBar";
 import { CardItem } from "../organisms/CardItem";
+import { MemoryRouter } from "react-router";
 
 export const atoms_effects = storiesOf("Organisms", module)
     .addDecorator(withInfo())
     .addDecorator(withKnobs)
+    .addDecorator(story => (
+        <MemoryRouter initialEntries={['/', 'posts']}>{story()}</MemoryRouter>
+    ))
     .add("Appbar", () => (
         <SampleAppBar title={text("title", "sample")} />
     ))
@@ -17,5 +21,6 @@ export const atoms_effects = storiesOf("Organisms", module)
             title={text("title", "Redux")}
             describe={text("describe", "A predictable state container for JavaScript apps.")}
             learnMoreUrl={text("learn more url", "https://redux.js.org/")}
+            route="dummy"
         />
     ))
