@@ -13,9 +13,9 @@ const menuContents: CardItemprops[] = [
     {
         image: "https://raw.githubusercontent.com/redux-saga/redux-saga/master/logo/0800/Redux-Saga-Logo.png",
         title: "Redux-Saga Example",
-        describe: "redux-saga is a library that aims to make application side effects",
+        describe: "redux-saga is a library that aims to make application side effects.You can see sample page clicking here.",
         learnMoreUrl: "https://redux-saga.js.org/",
-        route: '/redux-saga-example'
+        route: '/redux-saga-sample'
     }
 ]
 export const WelcomePage: React.FC = () => {
