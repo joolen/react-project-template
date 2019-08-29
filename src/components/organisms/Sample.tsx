@@ -18,7 +18,7 @@ export const CalculateSample: React.FC<props> = (props) => {
         <div>
             <Grid container justify='center' alignItems='center'>
                 <Grid item md={12}>
-                    < Typography variant='h3' align='center'> This is a sample page of redux!</Typography >
+                    < Typography variant='h3' align='center' color='secondary'> This is a sample page of redux!</Typography >
                 </Grid>
                 <TextField
                     required
