@@ -1,23 +1,10 @@
 import React from 'react'
-import { Container, Grid, Button } from '@material-ui/core';
-import SampleContainer from '../../containers/ReduxSampleContainer';
 import { RouteComponentProps, withRouter } from 'react-router';
+import { SampleReduxTemplate } from '../templates/SampleTemplate';
 
 
-export const ReduxSampleComponent = withRouter((props: RouteComponentProps) => {
-    const handleClick = () => {
-        props.history.push('/');
-    }
+export const SampleReduxPage = () => {
     return (
-        <Container maxWidth='md'>
-            <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-            >
-                <SampleContainer taxRate={8} />
-                <Button onClick={() => handleClick()} variant='contained' color="primary">Go home</Button>
-            </Grid >
-        </Container>)
-})
+        <SampleReduxTemplate taxRate={8} />
+    )
+}
