@@ -7,7 +7,8 @@ import { CardItem } from "../organisms/CardItem";
 import { MemoryRouter } from "react-router";
 import CalculateSample from "../../containers/ReduxSampleContainer";
 import { Provider } from "react-redux";
-import configureStore from '../../configureStore'
+import configureStore from '../../configureStore';
+import SampleSaga from '../../containers/SagaSampleContainer';
 
 const store = configureStore()
 
@@ -32,5 +33,10 @@ export const atoms_effects = storiesOf("Organisms", module)
     .add("calculationArea", () => (
         <Provider store={store}>
             <CalculateSample taxRate={8} />
+        </Provider>
+    ))
+    .add("Saga Sample", () => (
+        <Provider store={store}>
+            <SampleSaga />
         </Provider>
     ))

@@ -5,7 +5,7 @@ import ReduxSagaContainer from '../../containers/SagaSampleContainer';
 import { RouteComponentProps, withRouter } from 'react-router';
 
 type ownProp = {
-    taxRate: number,
+    taxRate?: number,
     explainTitle: string,
     explainBody: string[],
     handleContainer: "Redux" | "Redux-Saga"
@@ -26,7 +26,7 @@ export const SampleReduxTemplate = withRouter((props: props) => {
                 alignItems="center"
             >
                 {(props.handleContainer === 'Redux') ?
-                    <SampleContainer taxRate={props.taxRate} /> :
+                    <SampleContainer taxRate={props.taxRate ? props.taxRate : 0} /> :
                     <ReduxSagaContainer />
                 }
                 <Paper style={{ backgroundColor: 'black', padding: 10, marginBottom: 3 }}>

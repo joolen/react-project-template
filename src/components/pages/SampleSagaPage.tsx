@@ -1,23 +1,16 @@
 import React from 'react'
-import { Container, Grid, Button } from '@material-ui/core';
-import ReduxSagaContainer from '../../containers/SagaSampleContainer';
 import { RouteComponentProps, withRouter } from 'react-router';
+import { SampleReduxTemplate } from '../templates/SampleTemplate';
 
 
 export const ReduxSagaSampleComponent = withRouter((props: RouteComponentProps) => {
-    const handleClick = () => {
-        props.history.push('/');
-    }
     return (
-        <Container maxWidth='md'>
-            <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-            >
-                <ReduxSagaContainer />
-                <Button onClick={() => handleClick()} variant='contained' color="primary">Go home</Button>
-            </Grid >
-        </Container>)
+        <SampleReduxTemplate explainTitle="redux-saga souces are here"
+            explainBody={[
+                'reducers : src/modules/SampleSaga.ts',
+                "container : src/containers/ReduxSampleContainer.ts",
+                "saga : src/sagas/SampleSaga.ts"
+            ]}
+            handleContainer="Redux-Saga" />
+    )
 })
