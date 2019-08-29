@@ -1,5 +1,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) 
 
+日本語のドキュメントは[ここ](https://qiita.com/motuo/items/3bd44058c79bbcba8e6b)にあります。
+
 This project is based on [Create React App](https://github.com/facebook/create-react-app).
 Available scripts are confirmed in this template. Please read [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) before using.
 And this template contains [storybook](https://storybook.js.org/).
