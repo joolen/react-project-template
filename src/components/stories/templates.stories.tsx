@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
-import { withKnobs, number } from "@storybook/addon-knobs";
+import { withKnobs, number, array, select } from "@storybook/addon-knobs";
 import { WelcomeTemplate } from "../templates/WelcomeTemplate";
 import { CardItemprops } from "../organisms/CardItem";
 import { MemoryRouter } from "react-router";
@@ -39,6 +39,12 @@ export const atoms_effects = storiesOf("Templates", module)
     ))
     .add("SampleRedux", () => (
         <Provider store={store}>
-            <SampleReduxTemplate taxRate={number("taxRate", 8)} />
+            <SampleReduxTemplate taxRate={number("taxRate", 8)}
+                explainTitle="redux souces are here"
+                explainBody={array("explain body", [
+                    'reducers : src/modules/SampleState.ts',
+                    "container : src/containers/ReduxSampleContainer.ts"
+                ])}
+                handleContainer={select('handleContainer', ["Redux", "Redux-Saga"], "Redux")} />
         </Provider>
     ))
