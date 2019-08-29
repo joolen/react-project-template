@@ -5,6 +5,11 @@ import { withKnobs, text } from "@storybook/addon-knobs";
 import { SampleAppBar } from "../organisms/AppBar";
 import { CardItem } from "../organisms/CardItem";
 import { MemoryRouter } from "react-router";
+import CalculateSample from "../../containers/ReduxSampleContainer";
+import { Provider } from "react-redux";
+import configureStore from '../../configureStore'
+
+const store = configureStore()
 
 export const atoms_effects = storiesOf("Organisms", module)
     .addDecorator(withInfo())
@@ -23,4 +28,9 @@ export const atoms_effects = storiesOf("Organisms", module)
             learnMoreUrl={text("learn more url", "https://redux.js.org/")}
             route="dummy"
         />
+    ))
+    .add("calculationArea", () => (
+        <Provider store={store}>
+            <CalculateSample taxRate={8} />
+        </Provider>
     ))

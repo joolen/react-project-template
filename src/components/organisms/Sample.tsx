@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, TextField, Grid } from '@material-ui/core';
+import { Typography, TextField, Grid, Container } from '@material-ui/core';
 import { sampleActions } from '../../containers/ReduxSampleContainer';
 import { SampleState } from '../../modules/SampleState';
 
@@ -17,20 +17,20 @@ export const CalculateSample: React.FC<props> = (props) => {
     return (
         <div>
             <Grid container justify='center' alignItems='center'>
-                <Grid item>
-                    < Typography variant='h3' > This is a sample page of redux!</Typography >
+                <Grid item md={12}>
+                    < Typography variant='h3' align='center'> This is a sample page of redux!</Typography >
                 </Grid>
-                <Grid item>
-                    <TextField
-                        required
-                        label='price exclude tax'
-                        margin="normal"
-                        variant="outlined"
-                        onChange={(e) => setPrices(e)}
-                    />
-                    <Typography variant='h4'>given tax rate is {props.taxRate}%</Typography>
-                    <Typography variant='h5'>input value is：{props.price}</Typography>
-                    <Typography variant='h5'>include tax：{props.includeTax}</Typography>
+                <TextField
+                    required
+                    label='price exclude tax'
+                    margin="normal"
+                    variant="outlined"
+                    onChange={(e) => setPrices(e)}
+                />
+                <Grid item md={12}>
+                    <Typography variant='h4' align='center'>given tax rate is {props.taxRate}%</Typography>
+                    <Typography variant='h5' align='center'>input value is：{props.price}</Typography>
+                    <Typography variant='h5' align='center'>include tax：{props.includeTax}</Typography>
                 </Grid>
             </Grid>
         </div>
