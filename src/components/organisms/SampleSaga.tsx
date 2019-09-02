@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { Typography, Grid, Paper, Link } from '@material-ui/core';
 import { sampleSagaActions } from '../../containers/SagaSampleContainer';
 import { SampleSagaState } from '../../modules/SampleSaga';
-import { bgcolor } from '@material-ui/system';
 
 type props = sampleSagaActions & SampleSagaState;
 
 export const SampleSaga: React.FC<props> = (props) => {
+    //get init messages!
     useEffect(() => {
         props.getMessage()
     }, [])

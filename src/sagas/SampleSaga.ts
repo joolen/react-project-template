@@ -4,7 +4,7 @@ import { getGithubApi } from '../API/github';
 
 function dummyWait() {
     return new Promise(resolve => {
-        const duration = 1000 + Math.floor(Math.random() * 1500);
+        const duration = 3000;
         setTimeout(() => {
             resolve({ data: duration });
         }, duration);
@@ -12,7 +12,7 @@ function dummyWait() {
 }
 
 function* getMessage() {
-    yield put(sampleSagaActions.setMessage("Loading...(Using setTimeout Function!)"));
+    yield put(sampleSagaActions.setMessage("Loading...(3 seconds wait by using setTimeout Function!)"));
     yield call(dummyWait);
     const message: string = yield call(getGithubApi);
     yield put(sampleSagaActions.setMessage(message));
